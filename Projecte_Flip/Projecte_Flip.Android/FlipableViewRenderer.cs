@@ -7,10 +7,10 @@ using Projecte_Flip.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(SwipeableView), typeof(SwipeableViewRenderer))]
+[assembly: ExportRenderer(typeof(FlipableView), typeof(FlipableViewRenderer))]
 namespace Projecte_Flip.Droid
 {
-    public class SwipeableViewRenderer : ViewRenderer
+    public class FlipableViewRenderer : ViewRenderer
     {
         #region .: private Fields :.
 
@@ -26,7 +26,7 @@ namespace Projecte_Flip.Droid
 
         #endregion
 
-        public SwipeableViewRenderer(Context context) : base(context)
+        public FlipableViewRenderer(Context context) : base(context)
         {
             _listener = new CustomGestureListener();
             _detector = new GestureDetector(context, _listener);

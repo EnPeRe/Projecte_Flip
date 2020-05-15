@@ -24,6 +24,8 @@ namespace Projecte_Flip
 
             PageOne.SwipeRight += (sender, e) =>
                 SwipeGestureRecognizer_Swiped(sender, new SwipedEventArgs(sender, SwipeDirection.Right));
+            PageOne.SwipeUp += (sender, e) =>
+                SwipeGestureRecognizer_Swiped(sender, new SwipedEventArgs(sender, SwipeDirection.Up));
         }
 
         #endregion
@@ -52,7 +54,10 @@ namespace Projecte_Flip
                     break;
 
                 case SwipeDirection.Up:
-                    // Handle the swipe
+                    await PageOne.RotateXTo(90, 250, Easing.Linear);
+                    PageOne.RotationX = 270;
+                    await PageOne.RotateXTo(360, 250, Easing.Linear);
+                    PageOne.RotationX = 0;                  
                     break;
 
                 case SwipeDirection.Down:

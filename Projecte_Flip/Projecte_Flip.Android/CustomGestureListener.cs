@@ -21,7 +21,9 @@ namespace Projecte_Flip.Droid
         #region .: Public Events :. 
 
         public event EventHandler OnSwipeLeft;
+        public event EventHandler OnSwipeUp;
         public event EventHandler OnSwipeRight;
+        public event EventHandler OnSwipeDown;
 
         #endregion
 
@@ -50,6 +52,16 @@ namespace Projecte_Flip.Droid
                         OnSwipeRight?.Invoke(this, EventArgs.Empty);
                     else
                         OnSwipeLeft?.Invoke(this, EventArgs.Empty);
+                }
+            }
+            else
+            {
+                if (Math.Abs(diffY) > SwipeThreshold && Math.Abs(velocityY) > SwipeVelocityThreshold)
+                {
+                    if (diffY < 0)
+                        OnSwipeUp?.Invoke(this, EventArgs.Empty);
+                    else
+                        OnSwipeDown?.Invoke(this, EventArgs.Empty);
                 }
             }
 

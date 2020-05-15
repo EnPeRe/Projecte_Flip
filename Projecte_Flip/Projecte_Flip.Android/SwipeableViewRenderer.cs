@@ -57,11 +57,13 @@ namespace Projecte_Flip.Droid
             if (e.NewElement == null)
             {
                 _listener.OnSwipeRight -= HandleOnSwipeRight;
+                _listener.OnSwipeUp -= HandleOnSwipeUp;
             }
 
             if (e.OldElement == null)
             {
                 _listener.OnSwipeRight += HandleOnSwipeRight;
+                _listener.OnSwipeUp += HandleOnSwipeUp;
             }
 
             if ((SwipeableView)e.NewElement == null) return;
@@ -82,6 +84,12 @@ namespace Projecte_Flip.Droid
         {
             SetCameraDistance(_cameraDistance);
             ((SwipeableView)Element).OnSwipeRight();
+        }
+
+        private void HandleOnSwipeUp(object sender, EventArgs e)
+        {
+            SetCameraDistance(_cameraDistance);
+            ((SwipeableView)Element).OnSwipeUp();
         }
 
         #endregion

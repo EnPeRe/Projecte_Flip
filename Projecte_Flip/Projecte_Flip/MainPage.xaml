@@ -7,7 +7,7 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
 
-            <local:SwipeableView 
+            <local:FlipableView 
                 x:Name="PageOne" 
                 VerticalOptions="FillAndExpand"
                 HorizontalOptions="FillAndExpand">
@@ -21,7 +21,7 @@
                     VerticalOptions="FillAndExpand" >
                 </Frame>
 
-            </local:SwipeableView>
+            </local:FlipableView>
         </StackLayout>
     </ContentPage.Content>
 

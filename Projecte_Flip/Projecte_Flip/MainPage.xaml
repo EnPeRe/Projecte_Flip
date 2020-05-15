@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Projecte_Flip"
+             x:Class="Projecte_Flip.MainPage">
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+            <local:SwipeableScrollView 
+                x:Name="PageOne" 
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand">
+
+                <Frame 
+                    x:Name="CardFrame"
+                    BorderColor="Black"
+                    CornerRadius="10"
+                    Margin="20"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand" >
+                </Frame>
+
+            </local:SwipeableScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

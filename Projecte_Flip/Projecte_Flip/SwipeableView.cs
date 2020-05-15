@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace Projecte_Flip
 {
-    public class SwipeableScrollView : ContentView
+    public class SwipeableView : ContentView
     {
         public event EventHandler SwipeRight;
 

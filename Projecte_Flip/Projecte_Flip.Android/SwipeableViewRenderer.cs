@@ -7,10 +7,10 @@ using Projecte_Flip.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(SwipeableScrollView), typeof(SwipeableScrollViewRenderer))]
+[assembly: ExportRenderer(typeof(SwipeableView), typeof(SwipeableViewRenderer))]
 namespace Projecte_Flip.Droid
 {
-    public class SwipeableScrollViewRenderer : ViewRenderer
+    public class SwipeableViewRenderer : ViewRenderer
     {
         #region .: private Fields :.
 
@@ -26,7 +26,7 @@ namespace Projecte_Flip.Droid
 
         #endregion
 
-        public SwipeableScrollViewRenderer(Context context) : base(context)
+        public SwipeableViewRenderer(Context context) : base(context)
         {
             _listener = new CustomGestureListener();
             _detector = new GestureDetector(context, _listener);
@@ -64,7 +64,7 @@ namespace Projecte_Flip.Droid
                 _listener.OnSwipeRight += HandleOnSwipeRight;
             }
 
-            if ((SwipeableScrollView)e.NewElement == null) return;
+            if ((SwipeableView)e.NewElement == null) return;
 
             _cameraDistance = Context.Resources.DisplayMetrics.Density * Distance;
         }
@@ -81,7 +81,7 @@ namespace Projecte_Flip.Droid
         private void HandleOnSwipeRight(object sender, EventArgs e)
         {
             SetCameraDistance(_cameraDistance);
-            ((SwipeableScrollView)Element).OnSwipeRight();
+            ((SwipeableView)Element).OnSwipeRight();
         }
 
         #endregion

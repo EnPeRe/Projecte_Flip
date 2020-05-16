@@ -41,12 +41,14 @@ namespace Projecte_Flip
 
             switch (e.Direction)
             {
+                //PageOne (FlipableView) AND NOT CardFrame (Frame) on animation rotate!
+
                 case SwipeDirection.Left:
                     break;
 
                 case SwipeDirection.Right:
 
-                    await PageOne.RotateYTo(90, TurnDuration, _customEasing);
+                    await PageOne.RotateYTo(90, TurnDuration, _customEasing); //PageOne AND NOT CardFrame!
                     await PageOne.RotateYTo(180, TurnDuration, _customEasing);
                     PageOne.RotationX = 0;
                     PageOne.RotationY = 0;
